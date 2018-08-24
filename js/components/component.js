@@ -14,7 +14,7 @@ Vue.component('drawer-btn', {
   template: `
     <div id="drawer-btn">
         <input type="checkbox" :id="drawer.id" style="display: none;" v-model="drawer.isShow">
-        <label :for="drawer.id" id="open" class="btn-circle">
+        <label :for="drawer.id" id="open" class="btn-circle" :class="{checked: drawer.isShow}">
           <i class="material-icons">{{ drawer.icon }}</i>
         </label>
     </div>`
