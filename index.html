@@ -15,31 +15,33 @@
     <div id="container">
         <header class="flex">
             <drawer-btn :drawer="drawers.left"></drawer-btn>
+            
             <h1>
-                <a href="./main.html">title</a>
+                <a href="./index.html">title</a>
             </h1>
+            
             <nav>
                 <ul id="head-menu" class="flex">
                     <head-menu-items v-for="(item, key) in HeadMenuItems" :menu-item="item" :key="key"></head-menu-items>
                 </ul>
             </nav>
+            
             <drawer-btn :drawer="drawers.right"></drawer-btn>
         </header>
-
-        <section id="drawer">
-        </section>
 
         <main>
             <section id="left-drawer" class="drawer" :class="{ dShow: drawers.left.isShow }">
                 <p>left-drawer</p>
             </section>
+            
             <div id="contents" :class="{ dShow: drawers.left.isShow }">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolore omnis excepturi sapiente laborum
                     eaque, pariatur modi veritatis assumenda? Obcaecati, quam error iure rerum incidunt tempore velit dolorem
                     facere ducimus.
                 </p>
             </div>
-            <section id="right-drawer" class="drawer" v-bind:class="{ dShow: drawers.right.isShow }">
+            
+            <section id="right-drawer" class="drawer" :class="{ dShow: drawers.right.isShow }">
                 <p>right-drawer</p>
             </section>
         </main>

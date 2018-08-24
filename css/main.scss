@@ -36,6 +36,7 @@ ul {
   overflow: hidden;
   transition: 0.3s ease-in-out;
   margin: 0 0.7rem;
+  cursor: pointer;
 
   .checked {
     background: $btn-back;

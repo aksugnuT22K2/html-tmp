@@ -27,7 +27,8 @@ ul {
   border-radius: 50%;
   overflow: hidden;
   transition: 0.3s ease-in-out;
-  margin: 0 0.7rem; }
+  margin: 0 0.7rem;
+  cursor: pointer; }
   .btn-circle .checked {
     background: #eee; }
     .btn-circle .checked:hover {
