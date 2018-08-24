@@ -29,13 +29,10 @@ ul {
   transition: 0.3s ease-in-out;
   margin: 0 0.7rem;
   cursor: pointer; }
-  .btn-circle .checked {
+  .btn-circle:hover, .btn-circle.checked {
     background: #eee; }
-    .btn-circle .checked:hover {
-      background: unset; }
-
-#drawer-btn > input:checked ~ label {
-  background: #eee; }
+  .btn-circle.checked:hover {
+    background: unset; }
 
 #container {
   overflow: hidden;

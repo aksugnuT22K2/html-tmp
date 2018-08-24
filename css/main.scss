@@ -38,21 +38,12 @@ ul {
   margin: 0 0.7rem;
   cursor: pointer;
 
-  .checked {
+  &:hover, &.checked {
     background: $btn-back;
-
-    &:hover {
-      background: unset;
-    }
   }
-}
 
-#drawer-btn {
-  
-  &>input {
-    &:checked ~ label {
-      background: $btn-back;
-    }
+  &.checked:hover {
+    background: unset;
   }
 }
 
