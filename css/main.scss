@@ -1,4 +1,5 @@
 $str: #333;
+$str-light: #eee;
 $btn-back: #eee;
 
 * {
@@ -8,6 +9,10 @@ $btn-back: #eee;
   padding: 0;
   font-size: 14px;
   line-height: 1.4;
+}
+
+ul {
+  list-style: none;
 }
 
 .flex {
@@ -34,48 +39,90 @@ $btn-back: #eee;
   }
 }
 
-header {
-  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+#container {
+  overflow: hidden;
+  height: 100vh;
 
-  #drawer-btn {
-    margin-left: 1rem;
-  }
+  header {
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+    height: 2.7rem;
+    overflow: hidden;
 
-  h1 {
-    display: block;
-    height: 100%;
+    h1 {
+      display: block;
+      height: 100%;
 
-    a {
-      padding: 1rem;
-      font-size: 2rem;
-      width: 80%;
+      a {
+        padding: 1rem;
+        font-size: 2rem;
+        width: 80%;
+      }
     }
-  }
 
-  nav {
-    margin-left: auto;
+    nav {
+      margin-left: auto;
 
-    ul {
-      list-style-type: none;
+      ul {
+        list-style-type: none;
 
-      li {
-        & > a.btn {
-          display: block;
-          font-size: 1.5rem;
-          padding: 0.5rem 1rem;
+        li {
+          & > a.btn {
+            display: block;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
 
-          &:hover {
-            background: $btn-back;
+            &:hover {
+              background: $btn-back;
+            }
           }
         }
       }
     }
   }
-}
 
-main {
-  margin: 2rem;
-}
+  main {
+    position: relative;
 
-/* footer {
-} */
+    .drawer {
+      transition: 0.3s ease-in-out;
+      height: 100vh;
+      width: 50vw;
+      position: absolute;
+      text-align: center;
+
+      p {
+        margin-top: 2rem;
+        font-size: 2rem;
+      }
+    }
+    #left-drawer {
+      left: -50vw;
+      top: 0;
+      background: red;
+
+      &.dShow {
+        transform: translateX(50vw);
+      }
+    }
+    #right-drawer {
+      right: -50vw;
+      top: 0;
+      background: blue;
+
+      &.dShow {
+        transform: translateX(-50vw);
+      }
+
+      p {
+        color: $str-light;
+      }
+    }
+
+    #contents {
+      padding: 2em;
+    }
+  }
+
+  /* footer {
+  } */
+}

@@ -6,6 +6,9 @@
   font-size: 14px;
   line-height: 1.4; }
 
+ul {
+  list-style: none; }
+
 .flex {
   display: flex;
   align-items: center;
@@ -25,32 +28,56 @@
   .btn-circle:hover {
     background: #eee; }
 
-header {
-  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3); }
-  header #drawer-btn {
-    margin-left: 1rem; }
-  header h1 {
-    display: block;
-    height: 100%; }
-    header h1 a {
-      padding: 1rem;
-      font-size: 2rem;
-      width: 80%; }
-  header nav {
-    margin-left: auto; }
-    header nav ul {
-      list-style-type: none; }
-      header nav ul li > a.btn {
-        display: block;
-        font-size: 1.5rem;
-        padding: 0.5rem 1rem; }
-        header nav ul li > a.btn:hover {
-          background: #eee; }
-
-main {
-  margin: 2rem; }
-
-/* footer {
-} */
-
-/*# sourceMappingURL=main.css.map */
+#container {
+  overflow: hidden;
+  height: 100vh;
+  /* footer {
+  } */ }
+  #container header {
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+    height: 2.7rem;
+    overflow: hidden; }
+    #container header h1 {
+      display: block;
+      height: 100%; }
+      #container header h1 a {
+        padding: 1rem;
+        font-size: 2rem;
+        width: 80%; }
+    #container header nav {
+      margin-left: auto; }
+      #container header nav ul {
+        list-style-type: none; }
+        #container header nav ul li > a.btn {
+          display: block;
+          font-size: 1.5rem;
+          padding: 0.5rem 1rem; }
+          #container header nav ul li > a.btn:hover {
+            background: #eee; }
+  #container main {
+    position: relative; }
+    #container main .drawer {
+      transition: 0.3s ease-in-out;
+      height: 100vh;
+      width: 50vw;
+      position: absolute;
+      text-align: center; }
+      #container main .drawer p {
+        margin-top: 2rem;
+        font-size: 2rem; }
+    #container main #left-drawer {
+      left: -50vw;
+      top: 0;
+      background: red; }
+      #container main #left-drawer.dShow {
+        transform: translateX(50vw); }
+    #container main #right-drawer {
+      right: -50vw;
+      top: 0;
+      background: blue; }
+      #container main #right-drawer.dShow {
+        transform: translateX(-50vw); }
+      #container main #right-drawer p {
+        color: #eee; }
+    #container main #contents {
+      padding: 2em; }

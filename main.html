@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EventsSeal</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./js/index.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -15,29 +14,41 @@
 <body>
     <div id="container">
         <header class="flex">
-            <drawer-btn :icon="icon" :drawer="drawer.left"></drawer-btn>
+            <drawer-btn :drawer="drawers.left"></drawer-btn>
             <h1>
                 <a href="./main.html">title</a>
             </h1>
             <nav>
                 <ul id="head-menu" class="flex">
-                    <head-menu-items v-for="(item, key) in items" v-bind:menu-item="item" :key="key"></head-menu-items>
+                    <head-menu-items v-for="(item, key) in HeadMenuItems" :menu-item="item" :key="key"></head-menu-items>
                 </ul>
             </nav>
+            <drawer-btn :drawer="drawers.right"></drawer-btn>
         </header>
 
+        <section id="drawer">
+        </section>
+
         <main>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolore omnis excepturi sapiente laborum
-                eaque, pariatur modi veritatis assumenda? Obcaecati, quam error iure rerum incidunt tempore velit dolorem
-                facere ducimus.
-            </p>
+            <section id="left-drawer" class="drawer" v-bind:class="{ dShow: drawers.left.isShow }">
+                <p>left-drawer</p>
+            </section>
+            <div id="contents">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolore omnis excepturi sapiente laborum
+                    eaque, pariatur modi veritatis assumenda? Obcaecati, quam error iure rerum incidunt tempore velit dolorem
+                    facere ducimus.
+                </p>
+            </div>
+            <section id="right-drawer" class="drawer" v-bind:class="{ dShow: drawers.right.isShow }">
+                <p>right-drawer</p>
+            </section>
         </main>
 
         <footer></footer>
     </div>
 
-    <script src="./js/component.js"></script>
-
+    <script src="./js/components/component.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
