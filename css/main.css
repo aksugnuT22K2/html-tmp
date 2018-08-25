@@ -27,12 +27,9 @@ ul {
   border-radius: 50%;
   overflow: hidden;
   transition: 0.3s ease-in-out;
-  margin: 0 0.7rem;
-  cursor: pointer; }
-  .btn-circle:hover, .btn-circle.checked {
+  margin: 0 0.7rem; }
+  .btn-circle.checked {
     background: #eee; }
-  .btn-circle.checked:hover {
-    background: unset; }
 
 #container {
   overflow: hidden;
@@ -42,7 +39,7 @@ ul {
   } */ }
   #container header {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    height: 2.7rem;
+    height: 2.8rem;
     padding: 0.2rem 1rem;
     overflow: hidden;
     position: relative;
@@ -65,11 +62,11 @@ ul {
     position: relative; }
     #container main .drawer {
       transition: 0.3s ease-in-out;
-      height: calc(100vh - 2.7rem);
+      height: calc(100vh - 2.8rem);
       width: 50vw;
       position: absolute;
       background: #fafafa;
-      box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       text-align: center;
       overflow: hidden; }
       #container main .drawer p {

@@ -1,6 +1,9 @@
 $str: #333;
 $str-light: #eee;
 $btn-back: #eee;
+$header-height: 2.8rem;
+$drawer-width: 50vw;
+$drawer-hidden: 60vw;
 
 * {
   color: $str;
@@ -36,14 +39,9 @@ ul {
   overflow: hidden;
   transition: 0.3s ease-in-out;
   margin: 0 0.7rem;
-  cursor: pointer;
 
-  &:hover, &.checked {
+  &.checked {
     background: $btn-back;
-  }
-
-  &.checked:hover {
-    background: unset;
   }
 }
 
@@ -54,7 +52,7 @@ ul {
 
   header {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    height: 2.7rem;
+    height: $header-height;
     padding: 0.2rem 1rem;
     overflow: hidden;
     position: relative;
@@ -94,11 +92,11 @@ ul {
 
     .drawer {
       transition: 0.3s ease-in-out;
-      height: calc(100vh - 2.7rem);
-      width: 50vw;
+      height: calc(100vh - #{$header-height});
+      width: $drawer-width;
       position: absolute;
       background: #fafafa;
-      box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       
       text-align: center;
       overflow: hidden;
@@ -109,21 +107,21 @@ ul {
       }
     }
     #left-drawer {
-      left: -60vw;
+      left: -$drawer-hidden;
       top: 0;
       z-index: 80;
 
       &.dShow {
-        transform: translateX(60vw);
+        transform: translateX($drawer-hidden);
       }
     }
     #right-drawer {
-      right: -60vw;
+      right: -$drawer-hidden;
       top: 0;
       z-index: 60;
 
       &.dShow {
-        transform: translateX(-60vw);
+        transform: translateX(-$drawer-hidden);
       }
     }
 
