@@ -1,6 +1,6 @@
 # html-tmp
 
-[github pages](https://aksugnut22k2.github.io/html-tmp/index.html 'html-tmp')
+[github pages](https://aksugnut22k2.github.io/html-tmp/index.html 'html-tmp'){:target="_blank"}
 
 <br>
 <br>
