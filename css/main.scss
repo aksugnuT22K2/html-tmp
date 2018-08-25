@@ -39,6 +39,7 @@ ul {
   overflow: hidden;
   transition: 0.3s ease-in-out;
   margin: 0 0.7rem;
+  cursor: pointer;
 
   &.checked {
     background: $btn-back;
@@ -75,7 +76,7 @@ ul {
           & > a.btn {
             display: block;
             font-size: 1.5rem;
-            padding: 0.7rem 1rem;
+            padding: 1rem;
             transition: 0.3s ease-in-out;
 
             &:hover {
