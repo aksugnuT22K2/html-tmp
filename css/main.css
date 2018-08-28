@@ -5,7 +5,12 @@
   padding: 0;
   font-size: 14px;
   line-height: 1.6rem;
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif; }
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box; }
+
+#container .card, #container .table {
+  margin-top: 2rem;
+  background: #fff; }
 
 ul {
   list-style: none; }
@@ -33,18 +38,22 @@ ul {
     background: #eee; }
 
 #container {
-  overflow: hidden;
-  height: 100vh;
+  height: calc(100vh - 40px);
   min-width: 320px;
+  background: #fafafa;
   /* footer {
   } */ }
   #container header {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    height: 2.8rem;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 40px;
     padding: 0.2rem 1rem;
     overflow: hidden;
-    position: relative;
-    z-index: 90; }
+    position: fixed;
+    z-index: 90;
+    width: 100%;
+    top: 0;
+    left: 0; }
     #container header h1 a {
       padding: 0.7rem 1rem;
       font-size: 2rem; }
@@ -52,44 +61,76 @@ ul {
       margin-left: auto; }
       #container header nav ul {
         list-style-type: none; }
+        #container header nav ul li i {
+          margin-right: 0.5rem; }
         #container header nav ul li > a.btn {
-          display: block;
+          display: flex;
           font-size: 1.5rem;
           padding: 1rem;
           transition: 0.3s ease-in-out; }
           #container header nav ul li > a.btn:hover {
             background: #eee; }
   #container main {
-    position: relative; }
+    margin-top: 40px;
+    position: relative;
+    overflow-x: hidden;
+    height: 100%; }
     #container main .drawer {
       transition: 0.3s ease-in-out;
-      height: calc(100vh - 2.8rem);
       width: 50vw;
-      position: absolute;
-      background: #fafafa;
+      height: calc(100vh - 40px);
+      position: fixed;
+      background: #fff;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      top: 40px;
       text-align: center;
-      overflow: hidden; }
+      overflow-x: hidden;
+      overflow-y: auto; }
       #container main .drawer p {
-        margin-top: 2rem;
+        padding: 1rem;
         font-size: 2rem; }
     #container main #left-drawer {
       left: -60vw;
-      top: 0;
       z-index: 80; }
       #container main #left-drawer.dShow {
         transform: translateX(60vw); }
     #container main #right-drawer {
       right: -60vw;
-      top: 0;
       z-index: 60; }
       #container main #right-drawer.dShow {
         transform: translateX(-60vw); }
     #container main #contents {
+      overflow-x: hidden;
+      overflow-y: auto;
       padding: 2em;
       transition: 0.3s ease-in-out; }
       @media screen and (max-width: 735px) {
         #container main #contents.dShow {
           transform: translateX(50vw); } }
+  #container .card {
+    padding: 1.5rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 3px; }
+    #container .card h1 {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  #container .table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; }
+    #container .table tr th {
+      background: whitesmoke; }
+    #container .table tr th, #container .table tr td {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding: 0.3rem 0.8rem; }
+      #container .table tr th:nth-child(1), #container .table tr td:nth-child(1) {
+        width: 10rem; }
+      #container .table tr th:nth-child(3), #container .table tr td:nth-child(3) {
+        width: 6rem; }
+      @media screen and (max-width: 579px) {
+        #container .table tr th, #container .table tr td {
+          padding: 0.3rem 0;
+          text-align: center; } }
 
 /*# sourceMappingURL=main.css.map */

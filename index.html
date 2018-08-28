@@ -17,7 +17,7 @@
             <drawer-btn :drawer="drawers.left"></drawer-btn>
             
             <h1>
-                <a href="./index.html">title</a>
+                <a href="#">title</a>
             </h1>
             
             <nav>
@@ -32,6 +32,13 @@
         <main>
             <section id="left-drawer" class="drawer" :class="{ dShow: drawers.left.isShow }">
                 <p>left-drawer</p>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                    <li>item4</li>
+                    <li>item5</li>
+                </ul>
             </section>
             
             <div id="contents" :class="{ dShow: drawers.left.isShow }">
@@ -39,10 +46,35 @@
                     eaque, pariatur modi veritatis assumenda? Obcaecati, quam error iure rerum incidunt tempore velit dolorem
                     facere ducimus.
                 </p>
+
+                <!-- ▼card -->
+                <div class="card">
+                    <h1>Lorem, ipsum dolor.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus repudiandae, aspernatur nam blanditiis nihil optio voluptate laboriosam nobis cumque ut?</p>
+                </div>
+                <div class="card">
+                    <h1>Lorem ipsum dolor sit.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, maiores placeat tempora explicabo hic quam.</p>
+                </div>
+                <!-- ▲card -->
+
+                <!-- ▼table -->
+                <m-table :table-data="tableData"></m-table>
+                <m-table :table-data="tableData" :max="5"></m-table>
+                <m-table :table-data="tableData" :max="7"></m-table>
+                <m-table :table-data="tableData" :max="50"></m-table>
+                <!-- ▲table -->
             </div>
             
             <section id="right-drawer" class="drawer" :class="{ dShow: drawers.right.isShow }">
                 <p>right-drawer</p>
+                <ul>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                    <li>item4</li>
+                    <li>item5</li>
+                </ul>
             </section>
         </main>
 

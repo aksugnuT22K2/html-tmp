@@ -1,9 +1,11 @@
 $str: #333;
 $str-light: #eee;
 $btn-back: #eee;
-$header-height: 2.8rem;
+$header-height: 40px;
 $drawer-width: 50vw;
 $drawer-hidden: 60vw;
+$bg-light: #fff;
+$bg-dark: #fafafa;
 
 * {
   color: $str;
@@ -13,6 +15,12 @@ $drawer-hidden: 60vw;
   font-size: 14px;
   line-height: 1.6rem;
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+%component {
+  margin-top: 2rem;
+  background: $bg-light;
 }
 
 ul {
@@ -47,17 +55,21 @@ ul {
 }
 
 #container {
-  overflow: hidden;
-  height: 100vh;
+  height: calc(100vh - #{$header-height});
   min-width: 320px;
+  background: $bg-dark;
 
   header {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    background: $bg-light;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     height: $header-height;
     padding: 0.2rem 1rem;
     overflow: hidden;
-    position: relative;
+    position: fixed;
     z-index: 90;
+    width: 100%;
+    top: 0;
+    left: 0;
 
     h1 {
       a {
@@ -73,8 +85,12 @@ ul {
         list-style-type: none;
 
         li {
+          i {
+            margin-right: 0.5rem;
+          }
+          
           & > a.btn {
-            display: block;
+            display: flex;
             font-size: 1.5rem;
             padding: 1rem;
             transition: 0.3s ease-in-out;
@@ -89,27 +105,31 @@ ul {
   }
 
   main {
+    margin-top: $header-height;
     position: relative;
+    overflow-x: hidden;
+    height: 100%;
 
     .drawer {
       transition: 0.3s ease-in-out;
-      height: calc(100vh - #{$header-height});
       width: $drawer-width;
-      position: absolute;
-      background: #fafafa;
+      height: calc(100vh - #{$header-height});
+      position: fixed;
+      background: $bg-light;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      top: $header-height;
       
       text-align: center;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
 
       p {
-        margin-top: 2rem;
+        padding: 1rem;
         font-size: 2rem;
       }
     }
     #left-drawer {
       left: -$drawer-hidden;
-      top: 0;
       z-index: 80;
 
       &.dShow {
@@ -118,7 +138,6 @@ ul {
     }
     #right-drawer {
       right: -$drawer-hidden;
-      top: 0;
       z-index: 60;
 
       &.dShow {
@@ -127,17 +146,68 @@ ul {
     }
 
     #contents {
+      overflow-x: hidden;
+      overflow-y: auto;
       padding: 2em;
       transition: 0.3s ease-in-out;
-
+  
+      >p {
+        
+      }
+      
       @media screen and (max-width: 735px) {
         &.dShow{
           transform: translateX(50vw);
         }
       }
+
     }
   }
 
+  .card {
+    @extend %component;
+
+    padding: 1.5rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    
+    h1 {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .table {
+    @extend %component;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    tr {
+      th {
+        background: darken($bg-dark, 2%);
+      }
+      
+      th, td {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 0.3rem 0.8rem;
+
+        &:nth-child(1) {
+          width: 10rem;
+        }
+        &:nth-child(3) {
+          width: 6rem;
+        }
+
+        @media screen and (max-width: 579px) {
+          padding: 0.3rem 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  
   /* footer {
   } */
 }
