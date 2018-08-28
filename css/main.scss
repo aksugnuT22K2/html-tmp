@@ -91,9 +91,21 @@ ul {
           
           & > a.btn {
             display: flex;
-            font-size: 1.5rem;
             padding: 1rem;
             transition: 0.3s ease-in-out;
+            
+            span {
+              font-size: 1.5rem;
+            }
+            @media screen and (max-width: 395px) {
+              i {
+                margin: 0
+              }
+              
+              span {
+                display: none;
+              }
+            }
 
             &:hover {
               background: $btn-back;
@@ -150,10 +162,6 @@ ul {
       overflow-y: auto;
       padding: 2em;
       transition: 0.3s ease-in-out;
-  
-      >p {
-        
-      }
       
       @media screen and (max-width: 735px) {
         &.dShow{

@@ -65,9 +65,15 @@ ul {
           margin-right: 0.5rem; }
         #container header nav ul li > a.btn {
           display: flex;
-          font-size: 1.5rem;
           padding: 1rem;
           transition: 0.3s ease-in-out; }
+          #container header nav ul li > a.btn span {
+            font-size: 1.5rem; }
+          @media screen and (max-width: 395px) {
+            #container header nav ul li > a.btn i {
+              margin: 0; }
+            #container header nav ul li > a.btn span {
+              display: none; } }
           #container header nav ul li > a.btn:hover {
             background: #eee; }
   #container main {

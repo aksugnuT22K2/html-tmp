@@ -4,7 +4,7 @@ Vue.component('head-menu-items', {
     <li>
       <a :href="menuItem.url" class="btn">
         <i class="material-icons" v-if="menuItem.icon !== ''">{{ menuItem.icon }}</i>
-        {{ menuItem.text }}
+        <span>{{ menuItem.text }}</span>
       </a>
     </li>`,
 })
