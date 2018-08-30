@@ -76,6 +76,11 @@ ul {
               display: none; } }
           #container header nav ul li > a.btn:hover {
             background: #eee; }
+  @media screen and (max-width: 395px) {
+    #container header {
+      padding: 0.2em; }
+      #container header .btn-circle {
+        margin: 0; } }
   #container main {
     margin-top: 40px;
     position: relative;

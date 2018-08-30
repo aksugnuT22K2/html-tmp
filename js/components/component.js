@@ -34,19 +34,14 @@ Vue.component('m-table', {
 });
 
 const gridTable = Vue.component('grid-table', {
-  props: ['tableData'],
+  props: { tableData: Object },
   template: `
-    <div class="grid-table">
+    <div class="grid-table" style="display: grid; grid-template-columns: repeat(9, auto);">
       <div class="gth" v-for="(item, key) in tableData.th" :key="key">
         {{ item }}
       </div>
       <div class="gtd" v-for="item in tableData.td">
         {{ item }}
       </div>
-    </div>`,
-  computed: {
-    a: function() {
-      return this.tableData.td;
-    }
-  }
+    </div>`
 });
