@@ -15,17 +15,17 @@
     <div id="container">
         <header class="flex">
             <drawer-btn :drawer="drawers.left"></drawer-btn>
-            
+
             <h1>
                 <a href="#">title</a>
             </h1>
-            
+
             <nav>
                 <ul id="head-menu" class="flex">
                     <head-menu-items v-for="(item, key) in HeadMenuItems" :menu-item="item" :key="key"></head-menu-items>
                 </ul>
             </nav>
-            
+
             <drawer-btn :drawer="drawers.right"></drawer-btn>
         </header>
 
@@ -40,21 +40,29 @@
                     <li>item5</li>
                 </ul>
             </section>
-            
+
             <div id="contents" :class="{ dShow: drawers.left.isShow }">
+                <!-- ▼paragraph -->
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolore omnis excepturi sapiente laborum
                     eaque, pariatur modi veritatis assumenda? Obcaecati, quam error iure rerum incidunt tempore velit dolorem
                     facere ducimus.
                 </p>
+                <!-- ▲paragraph -->
+
+                <!-- ▼grid-table -->
+                <grid-table clasS="grid" :table-data="gTableData" style="grid-template-columns: repeat(9, auto);"></grid-table>
+                <!-- ▲grid-table -->
 
                 <!-- ▼card -->
                 <div class="card">
                     <h1>Lorem, ipsum dolor.</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus repudiandae, aspernatur nam blanditiis nihil optio voluptate laboriosam nobis cumque ut?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus repudiandae, aspernatur nam blanditiis
+                        nihil optio voluptate laboriosam nobis cumque ut?</p>
                 </div>
                 <div class="card">
                     <h1>Lorem ipsum dolor sit.</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, maiores placeat tempora explicabo hic quam.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, maiores placeat tempora explicabo
+                        hic quam.</p>
                 </div>
                 <!-- ▲card -->
 
@@ -65,7 +73,7 @@
                 <m-table :table-data="tableData" :max="50"></m-table>
                 <!-- ▲table -->
             </div>
-            
+
             <section id="right-drawer" class="drawer" :class="{ dShow: drawers.right.isShow }">
                 <p>right-drawer</p>
                 <ul>

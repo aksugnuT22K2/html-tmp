@@ -5,10 +5,10 @@
   padding: 0;
   font-size: 14px;
   line-height: 1.6rem;
-  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   box-sizing: border-box; }
 
-#container .card, #container .table {
+#container .card, #container .table, #container .grid-table {
   margin-top: 2rem;
   background: #fff; }
 
@@ -126,17 +126,40 @@ ul {
     table-layout: fixed; }
     #container .table tr th {
       background: whitesmoke; }
-    #container .table tr th, #container .table tr td {
+    #container .table tr th,
+    #container .table tr td {
       text-overflow: ellipsis;
       overflow: hidden;
       padding: 0.3rem 0.8rem; }
-      #container .table tr th:nth-child(1), #container .table tr td:nth-child(1) {
+      #container .table tr th:nth-child(1),
+      #container .table tr td:nth-child(1) {
         width: 10rem; }
-      #container .table tr th:nth-child(3), #container .table tr td:nth-child(3) {
+      #container .table tr th:nth-child(3),
+      #container .table tr td:nth-child(3) {
         width: 6rem; }
       @media screen and (max-width: 579px) {
-        #container .table tr th, #container .table tr td {
+        #container .table tr th,
+        #container .table tr td {
           padding: 0.3rem 0;
           text-align: center; } }
+  #container .grid-table {
+    border-top: 1px solid;
+    border-left: 1px solid; }
+    #container .grid-table .gth,
+    #container .grid-table .gtd {
+      border-bottom: 1px solid;
+      border-right: 1px solid;
+      padding: 0.3rem 0.8rem;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+      @media screen and (max-width: 579px) {
+        #container .grid-table .gth,
+        #container .grid-table .gtd {
+          padding: 0.3rem 0;
+          text-align: center; } }
+    #container .grid-table .gth {
+      text-align: center;
+      font-weight: bold;
+      background: whitesmoke; }
 
 /*# sourceMappingURL=main.css.map */
